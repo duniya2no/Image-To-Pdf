@@ -1,0 +1,80 @@
+{
+  "expo": {
+    "name": "img",
+    "slug": "img",
+    "version": "1.0.4",
+    "orientation": "portrait",
+    "icon": "./assets/images/512.png",
+    "scheme": "img",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.photopdf.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "We need access to your photo library to select images for PDF creation.",
+        "NSPhotoLibraryAddUsageDescription": "We need access to save photos to your library if needed."
+      }
+    },
+    "android": {
+      "package": "com.photopdf.app",
+      "versionCode": 4,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/512.png",
+        "backgroundColor": "#6366f1"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/512.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to take photos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos to create PDFs."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/512.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#ffffff"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f85d05ac-47a2-40a3-8bf4-a4c4b884afce"
+      }
+    }
+  }
+}
